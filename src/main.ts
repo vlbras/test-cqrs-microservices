@@ -14,7 +14,8 @@ async function bootstrap() {
     },
   });
   await app.startAllMicroservices();
-  /* Works without errors only if the following line is set
-  await app.listen(3000); */
+  /* Works without errors if one of the following lines is set
+  await app.listen(3000); - when you want to use the HTTP server (hybrid application)
+  await app.init(); - when you want to create the standard microservice */
 }
 bootstrap();
